@@ -5,7 +5,7 @@ on:
       ENV:
         required: true
         type: string
-        default: "staging"
+        default: "dev"
       TEST_CYCLE_ID:
         required: false
         type: string
