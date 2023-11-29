@@ -1,4 +1,4 @@
-name: API Regression on Staging
+name: API Regression
 on:
   workflow_dispatch:
     inputs:
