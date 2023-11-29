@@ -1,4 +1,4 @@
-BASE_URL=https://or7z5u0jc0.execute-api.eu-west-1.amazonaws.com
-EMAIL=mateuszr@mailsac.com
-EMAIL_APIKEY=k_BkdcIWma1ReqlKmFhHet3nlf4Kz2hgtsb8
-EMAIL_URL=https://mailsac.com/api/
+BASE_URL=
+EMAIL=
+EMAIL_APIKEY=
+EMAIL_URL=
