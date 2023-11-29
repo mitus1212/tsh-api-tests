@@ -1,6 +1,7 @@
 # Api tests
 Implemented using Typescript with Supertest.
 NodeJs 18.15.0 or newer is required to run tests.
+There are still many test cases to cover, these are just examples.
 
 # How to install dependencies:
 `npm i`
