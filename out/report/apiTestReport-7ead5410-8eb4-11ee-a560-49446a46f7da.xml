@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="7" failures="0" errors="0" time="5.699">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2023-11-29T12:40:31" time="5.331" tests="7">
+    <testcase classname="[Newsletter][POST] 400 response when endDate is less than 30 days afters startDate" name=" [Newsletter][POST] 400 response when endDate is less than 30 days afters startDate" time="0.24">
+    </testcase>
+    <testcase classname="[Newsletter][POST] 200 response when valid data is sent" name=" [Newsletter][POST] 200 response when valid data is sent" time="1.083">
+    </testcase>
+    <testcase classname="[Newsletter][POST] 400 response when agreement is false" name=" [Newsletter][POST] 400 response when agreement is false" time="0.165">
+    </testcase>
+    <testcase classname="[Newsletter][POST] 400 response when newslettertype is invalid" name=" [Newsletter][POST] 400 response when newslettertype is invalid" time="0.167">
+    </testcase>
+    <testcase classname="[Newsletter][POST] 400 response when name is missing" name=" [Newsletter][POST] 400 response when name is missing" time="0.099">
+    </testcase>
+    <testcase classname="[Newsletter][POST] 400 response when name is empty" name=" [Newsletter][POST] 400 response when name is empty" time="0.096">
+    </testcase>
+    <testcase classname="[Newsletter][POST] 400 response when email is not valid" name=" [Newsletter][POST] 400 response when email is not valid" time="0.101">
+    </testcase>
+  </testsuite>
+</testsuites>

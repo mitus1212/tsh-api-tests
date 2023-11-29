@@ -1,0 +1,42 @@
+name: API Regression on Staging
+on:
+  workflow_dispatch:
+    inputs:
+      ENV:
+        required: true
+        type: string
+        default: "staging"
+      TEST_CYCLE_ID:
+        required: false
+        type: string
+        default: "Text-Cycle-1"
+      TEST_CYCLE_NAME:
+        required: true
+        type: string
+        default: "Automated Regression Tests"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 18.18.2
+      - name: Install
+        run: npm install
+      - name: "Create env file"
+        run: |
+          touch .env
+          echo BASE_URL=${{ github.event.inputs.BASE_API_URL }} >> .env
+          echo EMAIL=${{ github.event.inputs.EMAIL }} >> .env
+          echo EMAIL_URL=${{ github.event.inputs.EMAIL_URL }} >> .env
+          echo EMAIL_APIKEY=${{ github.event.inputs.EMAIL_APIKEY }} >> .env
+          cat .env
+      - name: Test
+        run: npm test
+      - uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: logs
+          path: logs
