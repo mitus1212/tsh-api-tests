@@ -24,7 +24,7 @@ beforeAll(async () => {
   newsletterRequestRawData.email = `${process.env.EMAIL}`;
 });
 
-it("[Newsletter][POST] 400 response when endDate is less than 30 days afters startDate", async () => {
+it("[Newsletter][POST] 400 response when endDate is less than 30 days after startDate", async () => {
   const newsletterRequestData = JSON.stringify(newsletterRequestRawData);
   const addedNewsletterError = await createNewsletterError(
     newsletterRequestData
@@ -42,7 +42,7 @@ it("[Newsletter][POST] 400 response when endDate is less than 30 days afters sta
   expect(addedNewsletterError.body[0].context.key).toEqual("endDate");
 });
 
-it("[Newsletter][POST] 200 response when valid data is sent", async () => {
+it("[Newsletter][POST] 200 response when valid body data is sent", async () => {
   newsletterRequestRawData.endDate = futureDate.toISOString();
 
   const newsletterRequestData = JSON.stringify(newsletterRequestRawData);
@@ -52,7 +52,7 @@ it("[Newsletter][POST] 200 response when valid data is sent", async () => {
   expect(addedNewsletterError.body.success).toEqual(true);
 });
 
-it("[Newsletter][POST] 400 response when agreement is false", async () => {
+it("[Newsletter][POST] 400 response when agreement accepted equals false", async () => {
   newsletterRequestRawData.agreement = false;
   newsletterRequestRawData.endDate = futureDate.toISOString();
   const newsletterRequestData = JSON.stringify(newsletterRequestRawData);
@@ -93,7 +93,7 @@ it("[Newsletter][POST] 400 response when newslettertype is invalid", async () =>
   expect(addedNewsletterError.body[0].context.key).toEqual("newsType");
 });
 
-it("[Newsletter][POST] 400 response when name is missing", async () => {
+it("[Newsletter][POST] 400 response when name is missing in body", async () => {
   newsletterWithoutNameRequestRawData.email = `${process.env.EMAIL}`;
   newsletterWithoutNameRequestRawData.endDate = futureDate.toISOString();
   const newsletterRequestData = JSON.stringify(
@@ -133,7 +133,7 @@ it("[Newsletter][POST] 400 response when name is empty", async () => {
   expect(addedNewsletterError.body[0].context.key).toEqual("name");
 });
 
-it("[Newsletter][POST] 400 response when email is not valid", async () => {
+it("[Newsletter][POST] 400 response when email is invalid", async () => {
   newsletterRequestRawData.email = "mat@mat";
   const newsletterRequestData = JSON.stringify(newsletterRequestRawData);
   const addedNewsletterError = await createNewsletterError(
